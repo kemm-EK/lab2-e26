@@ -1,0 +1,56 @@
+@font-face {
+  font-family: arc;
+  src: url(../fonts/Archivo-Regular.woff);
+}
+@font-face {
+  font-family: geo;
+  src: url(../fonts/GeosansLight.woff);
+}
+:root {
+  --text-color-dark: #222;
+  --text-color-light: #d9d7d7;
+  --block-color: #2f2d2d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header,
+footer {
+  background-color: var(--block-color);
+  padding: 1rem;
+  > * {
+    color: var(--text-color-light);
+  }
+}
+footer {
+  height: 80px;
+}
+main {
+  flex: 1;
+  padding: 1rem;
+  p,
+  a {
+    color: var(--text-color);
+  }
+}
+h1,
+h2 {
+  font-family: arc;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+p,
+a {
+  font-family: geo;
+}
