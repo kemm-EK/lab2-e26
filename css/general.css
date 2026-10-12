@@ -28,7 +28,7 @@ header,
 footer {
   background-color: var(--block-color);
   padding: 1rem;
-  > * {
+  * {
     color: var(--text-color-light);
   }
 }
