@@ -49,6 +49,21 @@ footer {
     text-decoration: none;
   }
 }
+.back {
+  outline: 1px solid var(--text-color-light);
+  padding: 2px 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px var(--code-bg-color);
+  transform: translateY(-5px);
+  font-size: 0.9rem;
+  transition:
+    transform 100ms ease-out,
+    box-shadow 100ms ease-out;
+}
+.back:active {
+  transform: translate(2px, -3px);
+  box-shadow: 0 0 1px var(--code-bg-color);
+}
 footer {
   height: 80px;
 }
