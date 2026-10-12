@@ -6,10 +6,16 @@
   font-family: geo;
   src: url(../fonts/GeosansLight.woff);
 }
+@font-face {
+  font-family: jet;
+  src: url(../fonts/JetBrainsMono-Light.woff2);
+}
 :root {
   --text-color-dark: #222;
   --text-color-light: #d9d7d7;
   --block-color: #2f2d2d;
+  --code-bg-color: #6a6963;
+  --code-text-color: #eceadd;
 }
 * {
   margin: 0;
@@ -24,12 +30,23 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+div {
+  margin-bottom: 1rem;
+}
+header {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
 header,
 footer {
   background-color: var(--block-color);
   padding: 1rem;
   * {
     color: var(--text-color-light);
+  }
+  a {
+    text-decoration: none;
   }
 }
 footer {
@@ -42,6 +59,9 @@ main {
   a {
     color: var(--text-color);
   }
+  p {
+    margin: 1rem 0;
+  }
 }
 h1,
 h2 {
@@ -53,4 +73,14 @@ h2 {
 p,
 a {
   font-family: geo;
+}
+code {
+  display: block;
+  padding: 0.5rem 0.4rem;
+  background-color: var(--code-bg-color);
+  color: var(--code-text-color);
+  border: 1px solid var(--code-text-color);
+  border-radius: 5px;
+  font-family: jet;
+  line-height: 1.5;
 }

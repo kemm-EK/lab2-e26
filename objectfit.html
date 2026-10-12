@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS object-fit</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/objectfit.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><-- Back</a>
+      <h1>CSS object-fit</h1>
+    </header>
+    <main>
+      <h2>Tre billeder med object-fit</h2>
+      <section>
+        <div>
+          <img src="img/inaccessible_S.webp" alt="" />
+          <p>Dette billede er placeret i sin ramme med følgende css:</p>
+          <code>
+            width: 100%;<br />
+            height: 100%;<br />
+            object-fit: cover;
+          </code>
+        </div>
+        <div>
+          <img src="img/surface.webp" alt="" />
+          <p>Dette billede er placeret i sin ramme med følgende css:</p>
+          <code>
+            width: 100%;<br />
+            height: 100%;<br />
+            object-fit: contain;
+          </code>
+        </div>
+        <div>
+          <img src="img/dock_view_dusk_S.webp" alt="" />
+          <p>Dette billede er placeret i sin ramme med følgende css:</p>
+          <code>
+            width: 100%;<br />
+            height: 100%;<br />
+            object-fit: cover;<br />
+            object-position:25%;
+          </code>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>
