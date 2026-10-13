@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS transforms</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/transforms.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back"><-- Back</a>
+      <h1>CSS Transforms</h1>
+    </header>
+    <main>
+      <h2>Eksempler på CSS transforms</h2>
+      <section>
+        <div class="transform-example">
+          <img class="turn-around" src="img/dock_view_dusk_S.webp" alt="" />
+          <p>Dette billede er vendt på hovedet med følgende CSS:</p>
+          <code>
+            .turn-around {<br />
+            &nbsp; transform: rotate(180deg);<br />
+            }
+          </code>
+        </div>
+        <div class="transform-example">
+          <div class="three-trains">
+            <img src="img/train.webp" alt="" />
+            <img src="img/train.webp" alt="" />
+            <img src="img/train.webp" alt="" />
+          </div>
+          <p>Her er 3 billeder. Det øverste er normal størrelse, det midterste er halv størrelse og det nederste er halvanden gange større end originalen.</p>
+          <p>Her er CSS'en:</p>
+          <code>
+            img:nth-of-type(2) {<br />
+            &nbsp; transform: scale(0.5); <br />
+            } <br />
+            img:last-child { <br />
+            &nbsp; transform: scale(1.5); <br />
+            }
+          </code>
+        </div>
+        <div class="transform-example">
+          <div class="moved-image">
+            <img src="img/phonebooth.webp" alt="" />
+          </div>
+          <p>Dette billede er flyttet <em>sin egen bredde</em> til højre (x-aksen).</p>
+          <p>Da rammen er 2 pixels bred er der lagt 2px til billedets bredde som er 100%:</p>
+          <code>
+            img {<br />
+            &nbsp; width: 100%;<br />
+            &nbsp; transform: translateX( calc(100% + 2px) );<br />
+            }
+          </code>
+        </div>
+        <div class="transform-example">
+          <div class="text-container">
+            <p>Denne tekst er både roteret og skew'et med CSS. Skew bruges i dette tilfælde til at rette feltets kanter op, så de ikke er skrå OG o lt;pgt;-elementet bruges skew til at rette teksten op så den stadig følger roteringen.</p>
+          </div>
+          <p>Her er CSS koden:</p>
+          <code>
+            .div {<br />
+            &nbsp; transform: rotate(-10deg) skew(-10deg);<br />
+            &nbsp; p {<br />
+            &nbsp;&nbsp; transform: skew(10deg);<br />
+            &nbsp; }<br />
+            }
+          </code>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>
