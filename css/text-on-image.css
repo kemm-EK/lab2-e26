@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Iso";
+  src: url("../fonts/Isometra-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Geo";
+  src: url("../fonts/GeosansLight.woff") format("truetype");
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-content: start;
+  h2 {
+    grid-column: 1/-1;
+  }
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  code {
+    font-size: 0.8rem;
+  }
+}
+.container {
+  display: grid;
+  width: 100%;
+  min-width: 250px;
+  > * {
+    grid-area: 1 / 1;
+  }
+}
+.c1 {
+  .text-overlay-grid {
+    font-family: "Iso", serif;
+    font-size: 2rem;
+    /* justify-self: center; */
+    -webkit-text-stroke: 1px hsl(240, 70%, 95%);
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+    /* margin: 0 auto; */
+    /* place-self: top center; */
+    align-self: center;
+    text-align: center;
+    /* transform: translateY(50%); */
+  }
+}
+.c2 {
+  position: relative;
+  .text-overlay-position {
+    font-family: "Iso", serif;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px hsl(240, 70%, 95%);
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+/* .c3 {
+  position: relative;
+  .card-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Iso", serif;
+    font-size: 1rem;
+    width: 40%;
+    -webkit-text-stroke: 1px hsl(240, 70%, 95%);
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    /* transform: translate(-50%, -50%);
+    text-align: center;
+  }
+} */
+.c3 {
+  .card-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Geo", serif;
+    font-size: 1rem;
+    width: 40%;
+    height: max-content;
+    color: rgb(228, 240, 251);
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+    justify-self: right;
+    transform: translate(-15px, 10px);
+    text-align: center;
+  }
+  h2,
+  p {
+    margin: 3px;
+  }
+}
+.c4 {
+  /* position: relative; */
+  /* .overlay-image {
+    width: 30%;
+    position: absolute;
+    top: -7%;
+    right: 8%;
+  } */
+  .overlay-image {
+    width: 30%;
+    transform: translate(200%, -11.5%);
+  }
+}

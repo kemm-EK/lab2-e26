@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tekst på billeder</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/text-on-image.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back"><-- Back</a>
+      <h1>Tekst på billeder</h1>
+    </header>
+    <main>
+      <h2>Fire eksempler</h2>
+      <div class="outer-container">
+        <div class="container c1">
+          <img src="img/two_boats.webp" alt="Sample Image" />
+          <div class="text-overlay-grid">Text på billede med grid</div>
+        </div>
+        <div>
+          <p>CSS koden:</p>
+          <code>
+            .text-overlay-grid {<br />
+            &nbsp; font-family: "Iso", serif;<br />
+            &nbsp; font-size: 2rem;<br />
+            &nbsp; -webkit-text-stroke: 1px hsl(240, 70%, 95%);<br />
+            &nbsp; text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);<br />
+            &nbsp; align-self: center;<br />
+            &nbsp; text-align: center;<br />
+            }
+          </code>
+        </div>
+      </div>
+      <div class="outer-container">
+        <div class="container c2">
+          <img src="img/two_boats.webp" alt="Sample Image" />
+          <div class="text-overlay-position">Text på billede med position</div>
+        </div>
+        <div>
+          <p>CSS koden:</p>
+          <code>
+            .container {<br />
+            &nbsp; position: relative;<br />
+            &nbsp; .text-overlay-position {<br />
+            &nbsp;&nbsp;&nbsp; font-family: "Iso", serif;<br />
+            &nbsp;&nbsp;&nbsp; font-size: 2rem;<br />
+            &nbsp;&nbsp;&nbsp; -webkit-text-stroke: 1px hsl(240, 70%, 95%);<br />
+            &nbsp;&nbsp;&nbsp; text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);<br />
+            &nbsp;&nbsp;&nbsp; position: absolute;<br />
+            &nbsp;&nbsp;&nbsp; top: 50%;<br />
+            &nbsp;&nbsp;&nbsp; left: 50%;<br />
+            &nbsp;&nbsp;&nbsp; transform: translate(-50%, -50%);<br />
+            &nbsp;&nbsp;&nbsp; text-align: center;<br />
+            } }
+          </code>
+        </div>
+      </div>
+      <div class="outer-container">
+        <div class="container c3">
+          <img src="img/two_boats.webp" alt="Sample Image" />
+
+          <div class="card-overlay">
+            <div class="card">
+              <h2>Card Title</h2>
+              <p>This is a card with text overlay on the image.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p>Her er CSS koden:</p>
+            <code>
+              .container {<br />
+              &nbsp; .card-overlay {<br />
+              &nbsp;&nbsp; background-color: rgba(0, 0, 0, 0.5);<br />
+              &nbsp;&nbsp; padding: 5px;<br />
+              &nbsp;&nbsp; border-radius: 5px;<br />
+              &nbsp;&nbsp; font-family: "Geo", serif;<br />
+              &nbsp;&nbsp; font-size: 1rem;<br />
+              &nbsp;&nbsp; width: 40%;<br />
+              &nbsp;&nbsp; height: max-content;<br />
+              &nbsp;&nbsp; color: rgb(228, 240, 251);<br />
+              &nbsp;&nbsp; text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);<br />
+              &nbsp;&nbsp; justify-self: right;<br />
+              &nbsp;&nbsp; transform: translate(-15px, 10px);<br />
+              &nbsp;&nbsp; text-align: center;<br />
+              &nbsp; }<br />
+              &nbsp; h2,<br />
+              &nbsp; p {<br />
+              &nbsp;&nbsp; margin: 3px;<br />
+              &nbsp; }<br />
+              }
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-container">
+        <div class="container c4">
+          <img src="img/two_boats.webp" alt="Sample Image" />
+          <img class="overlay-image" src="img/sculpture.webp" alt="Sample Image" />
+        </div>
+        <div>
+          <p>Her er CSS koden:</p>
+          <code>
+            .overlay-image {<br />
+            &nbsp; width: 30%;<br />
+            &nbsp; transform: translate(200%, -11.5%);<br />
+            &nbsp; }<br />
+            }
+          </code>
+          <p>Alternativt kan det gøres med position:</p>
+          <code>
+            .container { <br />
+            &nbsp; position: relative; <br />
+            &nbsp; .overlay-image { <br />
+            &nbsp;&nbsp; width: 30%; <br />
+            &nbsp;&nbsp; position: absolute; <br />
+            &nbsp;&nbsp; top: -7%; <br />
+            &nbsp;&nbsp; right: 8%; <br />
+            }
+          </code>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>
