@@ -1,0 +1,26 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+article {
+  background-color: #444;
+  width: 500px;
+  height: fit-content;
+  padding: 0.6rem 3rem 0.6rem 1rem;
+  display: grid;
+  > div {
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 5px;
+  }
+  /* &:hover .unedited {
+    display: none;
+  } */
+}
+.unedited-1 {
+  background-color: rgb(180, 180, 169);
+}
+.nested-2 {
+  grid-column: span 2;
+}

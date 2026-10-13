@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS transforms</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/transitions.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back"><-- Back</a>
+      <h1>CSS Transitions</h1>
+    </header>
+    <main>
+      <h2>Eksempler på CSS Transitions</h2>
+      <section>
+        <div class="transition-example">
+          <img class="moving-image" src="img/dock_view_dusk_S.webp" alt="" />
+          <p>Dette billede flytter sig når musen føres henover det</p>
+          <code>
+            .moving-image { <br />
+            &nbsp; transition: transform 0.4s ease;<br />
+            } <br />
+            .moving-image:hover { <br />
+            &nbsp; transform: translate(30px, -40px); <br />
+            }
+          </code>
+        </div>
+        <div class="transition-example">
+          <div class="circle"></div>
+          <p>Her er en cirkel der lyser op, når musen føres henover den</p>
+          <code>
+            .circle {<br />
+            &nbsp; width: 75%;<br />
+            &nbsp; aspect-ratio: 1/1;<br />
+            &nbsp; border-radius: 50%;<br />
+            &nbsp; background-color: rgb(62, 42, 15);<br />
+            &nbsp; justify-self: center;<br />
+            &nbsp; transition: all 0.5s ease;<br />
+            }<br />
+            .circle:hover {<br />
+            &nbsp; background-color: #ebfc02;<br />
+            &nbsp; filter: drop-shadow(0 0 35px #ffff01);<br />
+            }
+          </code>
+        </div>
+        <div class="transition-example">
+          <div class="rotating-image">
+            <img src="img/phonebooth.webp" alt="" />
+            <p>Dette billede roterer 90 grader, når musen flyttes henover det.</p>
+            <code>
+              .rotating-image {<br />
+              &nbsp; transition: transform 1s ease;<br />
+              }<br />
+              .rotating-image:hover {<br />
+              &nbsp; transform: rotate(90deg);<br />
+              }
+            </code>
+          </div>
+        </div>
+        <div class="transition-example">
+          <div class="image-filters">
+            <img src="/img/berlin.webp" alt="" />
+            <p>Flyt musen henover billedet og aktiver filtrene</p>
+            <p>Her er CSS koden:</p>
+            <code>
+              .image-filters {<br />
+              &nbsp; transition: filter 1.2s ease;<br />
+              }<br />
+              .image-filters:hover {<br />
+              &nbsp; filter: saturate(300%) <br />
+              &nbsp; brightness(140%) <br />
+              &nbsp; hue-rotate(20deg);<br />
+              }
+            </code>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>

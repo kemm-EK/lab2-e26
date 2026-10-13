@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested CSS</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/nested.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back"><-- Back</a>
+      <h1>Nested CSS</h1>
+    </header>
+    <main>
+      <h2>Nested CSS</h2>
+      <section>
+        <article>
+          <div class="nested">
+            <code>
+              div {<br />
+              &nbsp; background-color: #234;<br />
+              &nbsp; &:hover {<br />
+              &nbsp;&nbsp; background-color: rgb(226, 245, 88);<br />
+              }<br />
+              &nbsp; p {<br />
+              &nbsp;&nbsp; color: #899;<br />
+              &nbsp;&nbsp; font-size: 1.2rem;<br />
+              &nbsp; } <br />
+              }
+            </code>
+          </div>
+          <div class="unedited">
+            <code>
+              div {<br />
+              &nbsp; background-color: #234;<br />
+              }<br />
+              div:hover {<br />
+              &nbsp; background-color: rgb(226, 245, 88);<br />
+              }<br />
+              div p {<br />
+              &nbsp; color: #899;<br />
+              &nbsp; font-size: 1.2rem;<br />
+              }
+            </code>
+          </div>
+        </article>
+        <article>
+          <div class="nested">
+            <code>
+              nav {<br />
+              &nbsp; background-color: #263238;<br />
+              &nbsp; padding: 1rem;<br />
+              &nbsp; ul {<br />
+              &nbsp;&nbsp; display: flex;<br />
+              &nbsp;&nbsp; gap: 2rem;<br />
+              &nbsp;&nbsp; list-style: none;<br />
+              &nbsp;&nbsp; margin: 0;<br />
+              &nbsp;&nbsp; padding: 0;<br />
+              &nbsp; }<br />
+              &nbsp; li {<br />
+              &nbsp;&nbsp; border-right: 1px solid #607d8b;<br />
+              &nbsp;&nbsp; padding-right: 2rem;<br />
+              &nbsp; }<br />
+              &nbsp; a {<br />
+              &nbsp;&nbsp; color: white;<br />
+              &nbsp;&nbsp; text-decoration: none;<br />
+              &nbsp; }<br />
+              &nbsp;&nbsp; &:hover {<br />
+              &nbsp;&nbsp;&nbsp; color: #80deea;<br />
+              &nbsp; }<br />
+              }
+            </code>
+          </div>
+          <div class="unedited">
+            <code>
+              nav {<br />
+              &nbsp; background-color: #263238; <br />
+              &nbsp; padding: 1rem; <br />
+              } <br />
+              nav ul { <br />
+              &nbsp; display: flex; <br />
+              &nbsp; gap: 2rem; <br />
+              &nbsp; list-style: none; <br />
+              &nbsp; margin: 0; <br />
+              &nbsp; padding: 0; <br />
+              } <br />
+              nav li { <br />
+              &nbsp; border-right: 1px solid #607d8b; <br />
+              &nbsp; padding-right: 2rem; <br />
+              } <br />
+              nav a { <br />
+              &nbsp; color: white; <br />
+              &nbsp; text-decoration: none; <br />
+              } <br />
+              nav a:hover { <br />
+              &nbsp; color: #80deea; <br />
+              }
+            </code>
+          </div>
+        </article>
+        <article>
+          <div class="nested">
+            <code>
+              .product-card {<br />
+              &nbsp; max-width: 350px;<br />
+              &nbsp; padding: 1.5rem;<br />
+              &nbsp; background: #f5f5f5;<br />
+              &nbsp; border: 1px solid #ccc;<br />
+              &nbsp; border-radius: 10px;<br />
+
+              &nbsp; h2 {<br />
+              &nbsp;&nbsp; font-size: 1.5rem;<br />
+              &nbsp;&nbsp; margin-bottom: 0.5rem;<br />
+              &nbsp; }<br />
+
+              &nbsp; .price {<br />
+              &nbsp;&nbsp; color: #206040;<br />
+              &nbsp;&nbsp; font-weight: bold;<br />
+
+              &nbsp;&nbsp; &::after {<br />
+              &nbsp;&nbsp;&nbsp; content: " DKK";<br />
+              &nbsp;&nbsp;&nbsp; font-size: 0.8rem;<br />
+              &nbsp;&nbsp; }<br />
+              &nbsp; }<br />
+
+              &nbsp; button {<br />
+              &nbsp;&nbsp; padding: 0.7rem 1.2rem;<br />
+              &nbsp;&nbsp; background: #263238;<br />
+              &nbsp;&nbsp; color: white;<br />
+              &nbsp;&nbsp; border: none;<br />
+              &nbsp;&nbsp; cursor: pointer;<br />
+
+              &nbsp;&nbsp; &:hover {<br />
+              &nbsp;&nbsp;&nbsp; background: #455a64;<br />
+              &nbsp;&nbsp; }<br />
+
+              &nbsp;&nbsp; &:active {<br />
+              &nbsp;&nbsp;&nbsp; transform: scale(0.97);<br />
+              &nbsp;&nbsp; }<br />
+              &nbsp; }<br />
+
+              &nbsp; &.featured {<br />
+              &nbsp;&nbsp; border: 3px solid gold;<br />
+              &nbsp; }<br />
+              }
+            </code>
+          </div>
+          <div class="unedited">
+            <code>
+              .product-card {<br />
+              &nbsp; max-width: 350px;<br />
+              &nbsp; padding: 1.5rem;<br />
+              &nbsp; background: #f5f5f5;<br />
+              &nbsp; border: 1px solid #ccc;<br />
+              &nbsp; border-radius: 10px;<br />
+              }<br />
+
+              .product-card h2 {<br />
+              &nbsp; font-size: 1.5rem;<br />
+              &nbsp; margin-bottom: 0.5rem;<br />
+              }<br />
+
+              .product-card .price {<br />
+              &nbsp; color: #206040;<br />
+              &nbsp; font-weight: bold;<br />
+              }<br />
+
+              .product-card .price::after {<br />
+              &nbsp; content: " DKK";<br />
+              &nbsp; font-size: 0.8rem;<br />
+              }<br />
+
+              .product-card button {<br />
+              &nbsp; padding: 0.7rem 1.2rem;<br />
+              &nbsp; background: #263238;<br />
+              &nbsp; color: white;<br />
+              &nbsp; border: none;<br />
+              &nbsp; cursor: pointer;<br />
+              } <br />
+              .product-card button:hover { <br />
+              &nbsp; background: #455a64; <br />
+              } <br />
+              .product-card button:active { <br />
+              &nbsp; transform: scale(0.97); <br />
+              } <br />
+              .product-card.featured { <br />
+              &nbsp; border: 3px solid gold; <br />
+              }
+            </code>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>

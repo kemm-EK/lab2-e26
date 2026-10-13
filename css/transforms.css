@@ -25,12 +25,25 @@ section {
 .three-trains {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
-  img:nth-of-type(2) {
-    transform: scale(0.5);
+  justify-items: left;
+  div {
+    outline: 1px dashed red;
   }
-  img:last-child {
-    transform: scale(1.5);
+  div:nth-of-type(2) {
+    transform: scale(0.5) translateX(-50%);
+    img {
+      transform-origin: left bottom;
+      transform: rotate(45deg);
+      outline: 1px dashed rgba(255, 0, 0, 0.3);
+    }
+  }
+  div:last-child {
+    transform: scale(1.5) translate(17%);
+    img {
+      transform-origin: right bottom;
+      transform: rotate(90deg);
+      outline: 1px dashed rgba(255, 0, 0, 0.2);
+    }
   }
 }
 .moved-image {

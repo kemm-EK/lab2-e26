@@ -1,0 +1,40 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+img {
+  width: 100%;
+}
+.moving-image {
+  transition: transform 0.4s ease;
+  &:hover {
+    transform: translate(30px, -40px);
+  }
+}
+
+.circle {
+  width: 75%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: rgb(62, 42, 15);
+  justify-self: center;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: #ebfc02;
+    filter: drop-shadow(0 0 35px #ffff01);
+  }
+}
+
+.rotating-image img {
+  transition: transform 1s ease;
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+.image-filters img {
+  transition: filter 1.2s ease;
+  &:hover {
+    filter: saturate(300%) brightness(140%) hue-rotate(20deg);
+  }
+}
