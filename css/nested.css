@@ -5,7 +5,7 @@ section {
 }
 article {
   background-color: #444;
-  width: 500px;
+  width: 1000px;
   height: fit-content;
   padding: 0.6rem 3rem 0.6rem 1rem;
   display: grid;
@@ -14,13 +14,11 @@ article {
     grid-row: 1;
     border-radius: 5px;
   }
-  /* &:hover .unedited {
+  &:hover .unedited {
     display: none;
-  } */
+  }
 }
-.unedited-1 {
-  background-color: rgb(180, 180, 169);
-}
-.nested-2 {
-  grid-column: span 2;
+
+.unedited code {
+  height: 100%;
 }
