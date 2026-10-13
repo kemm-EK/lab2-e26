@@ -56,16 +56,16 @@
         </div>
         <div class="transform-example">
           <div class="text-container">
-            <p>Denne tekst er både roteret og skew'et med CSS. Skew bruges i dette tilfælde til at rette feltets kanter op, så de ikke er skrå OG o lt;pgt;-elementet bruges skew til at rette teksten op så den stadig følger roteringen.</p>
+            <p>Denne tekst er både roteret og skew'et med CSS. Skew bruges i dette tilfælde til at rette feltets kanter op, så de ikke er skrå OG i &lt;p&gt;-elementet bruges skew til at rette teksten op så den stadig følger roteringen.</p>
           </div>
           <p>Her er CSS koden:</p>
           <code>
-            .div {<br />
+            div {<br />
             &nbsp; transform: rotate(-10deg) skew(-10deg);<br />
-            &nbsp; p {<br />
-            &nbsp;&nbsp; transform: skew(10deg);<br />
-            &nbsp; }<br />
-            }
+            } <br />
+            div p {<br />
+            &nbsp; transform: skew(10deg);<br />
+            }<br />
           </code>
         </div>
       </section>
