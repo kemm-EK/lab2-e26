@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>::before & ::after</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/before-after.css" />
+    <link rel="icon" type="image/png" href="img/icon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/icon/favicon.svg" />
+    <link rel="shortcut icon" href="img/icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/icon/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back"><-- Back</a>
+      <h1>Pseudoelementerne ::before og ::after</h1>
+    </header>
+    <main>
+      <h2>Eksempel 1: Employee Cards</h2>
+      <section>
+        <article class="card">
+          <h2>Manilla</h2>
+          <img src="img/manilla.webp" alt="" />
+          <p>Position: CEO</p>
+          <p class="tel">12345678</p>
+          <p class="email">email@example.com</p>
+        </article>
+        <article class="card">
+          <h2>Bertil</h2>
+          <img src="img/bertil.webp" alt="" />
+          <p>Position: CPO</p>
+          <p class="tel">12345678</p>
+          <p class="email">email@example.com</p>
+        </article>
+        <article class="card">
+          <h2>Angela</h2>
+          <img src="img/angela.webp" alt="" />
+          <p>Position: CFO</p>
+          <p class="tel">12345678</p>
+          <p class="email">email@example.com</p>
+        </article>
+        <div class="grid_1-2">
+          <div>
+            <div>
+              <p>Her er tre employee cards præsenteret. <strong>::before</strong> bruges til at indsætte telefon & email-ikoner.</p>
+              <p>Koden:</p>
+              <code>
+                .tel::before {<br />
+                &nbsp; content: "📞 ";<br />
+                &nbsp; margin-right: 0.5rem;<br />
+                }<br />
+                .email::before {<br />
+                &nbsp; content: "✉️ ";<br />
+                &nbsp; margin-right: 0.5rem;<br />
+                }
+              </code>
+            </div>
+            <div>
+              <p>Hover-effekten på billedet er lavet med transition og filter.</p>
+              <p>Her kan koden ses:</p>
+              <code>
+                img {<br />
+                &nbsp; transition: filter 0.6s;<br />
+                &nbsp; &:hover {<br />
+                &nbsp;&nbsp; filter: brightness(120%);<br />
+                &nbsp; }<br />
+                }
+              </code>
+            </div>
+          </div>
+          <div>
+            <p>Både <strong>::before</strong> og <strong>::after</strong> bruges sammen med <strong>position</strong> efter <strong>&lt;h2&gt;</strong> til at lave den mørkere kant i top og bund af kortet.</p>
+            <p>Koden</p>
+            <code>
+              h2::before {<br />
+              &nbsp; content: "";<br />
+              &nbsp; position: absolute;<br />
+              &nbsp; left: 0;<br />
+              &nbsp; top: 0;<br />
+              &nbsp; width: 100%;<br />
+              &nbsp; height: 20px;<br />
+              &nbsp; background-color: var(--card-edge-color);<br />
+              }<br />
+              h2::after {<br />
+              &nbsp; content: "";<br />
+              &nbsp; position: absolute;<br />
+              &nbsp; left: 0;<br />
+              &nbsp; bottom: 0;<br />
+              &nbsp; width: 100%;<br />
+              &nbsp; height: 20px;<br />
+              &nbsp; background-color: var(--card-edge-color);<br />
+              }
+            </code>
+          </div>
+        </div>
+      </section>
+      <h2>Eksempel 2: Overlay og tegn</h2>
+      <section>
+        <div class="outer-container">
+          <div class="image-container gallery-item"><img src="img/berlin.webp" alt="" /></div>
+          <p>A building in Berlin</p>
+        </div>
+        <div class="outer-container">
+          <div class="image-container gallery-item"><img src="img/canal.webp" alt="" /></div>
+          <p>A canal in Copenhagen</p>
+        </div>
+        <div class="outer-container">
+          <div class="image-container gallery-item"><img src="img/two_boats.webp" alt="" /></div>
+          <p>Two boats on Møn</p>
+        </div>
+        <div class="grid_1-2">
+          <div>
+            <p>I dette eksempel bruges <strong>::before</strong> til at lave et overlay over billedet, der er gråt og gennemsigtigt. Det er dog også usynligt indtil man kører musen henover et billede.</p>
+            <p>Eksemplet bruger også <strong>::after</strong> til at lave et <em>circle plus</em> ovenpå billedet. Tegnet sættes i midten af billedet med <strong>position</strong>.</p>
+          </div>
+          <div>
+            <p>Her er CSS koden:</p>
+            <code>
+              .gallery-item::before {<br />
+              &nbsp; content: "";<br />
+              &nbsp; position: absolute;<br />
+              &nbsp; inset: 0;<br />
+              &nbsp; background: rgb(0 0 0 / 40%);<br />
+              &nbsp; opacity: 0;<br />
+              &nbsp; transition: opacity 250ms;<br />
+              &nbsp; pointer-events: none;<br />
+              }<br />
+              <br />
+              .gallery-item::after {<br />
+              &nbsp; content: "⊕";<br />
+              &nbsp; position: absolute;<br />
+              &nbsp; top: 50%;<br />
+              &nbsp; left: 50%;<br />
+              &nbsp; transform: translate(-50%, -50%);<br />
+              &nbsp; color: white;<br />
+              &nbsp; font-size: 3rem;<br />
+              &nbsp; opacity: 0;<br />
+              &nbsp; transition: opacity 250ms;<br />
+              &nbsp; pointer-events: none;<br />
+              &nbsp; }<br />
+              &nbsp; <br />
+              .gallery-item:hover::before,<br />
+              .gallery-item:hover::after {<br />
+              &nbsp; opacity: 1;<br />
+              }
+            </code>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>
