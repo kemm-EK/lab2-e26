@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .gallery-item {
+      display: grid;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+
+      > * {
+        grid-area: 1 / 1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+      }
+      &::before {
+        content: "";
+        grid-area: 1 / 1;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* background: linear-gradient(transparent 10%, rgba(0 0 0 /80%) 70%); */
+        /* background: radial-gradient(ellipse at center, transparent 30%, rgb(0 0 0 / 85%) 100%); */
+        /* background-image: url(img/mary_cartoon.webp); */
+        background-size: cover;
+        opacity: 0;
+        transition: opacity 450ms;
+        pointer-events: none;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+    p {
+    }
+  </style>
+  <body>
+    <div class="gallery-item">
+      <img src="img/mary.webp" alt="" />
+      <p><em>AI-genereret billede</em></p>
+      <a href="#"></a>
+    </div>
+  </body>
+</html>
