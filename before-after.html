@@ -99,22 +99,32 @@
       <h2>Eksempel 2: Overlay og tegn</h2>
       <section>
         <div class="outer-container">
-          <div class="image-container gallery-item"><img src="img/berlin.webp" alt="" /></div>
+          <div class="image-container gallery-item">
+            <img src="img/berlin.webp" alt="" />
+            <a class="zoom" href="img/berlin.webp" target="_blank" aria-label="View full-size image"></a>
+          </div>
+
           <p>A building in Berlin</p>
         </div>
         <div class="outer-container">
-          <div class="image-container gallery-item"><img src="img/canal.webp" alt="" /></div>
+          <div class="image-container gallery-item">
+            <img src="img/canal.webp" alt="" />
+            <a class="zoom" href="img/canal.webp" target="_blank" aria-label="View full-size image"></a>
+          </div>
           <p>A canal in Copenhagen</p>
         </div>
         <div class="outer-container">
-          <div class="image-container gallery-item"><img src="img/two_boats.webp" alt="" /></div>
+          <div class="image-container gallery-item">
+            <img src="img/two_boats.webp" alt="" />
+            <a class="zoom" href="img/two_boats.webp" target="_blank" aria-label="View full-size image"></a>
+          </div>
           <p>Two boats on Møn</p>
         </div>
         <div class="grid_1-2">
           <div>
             <p>I dette eksempel bruges <strong>::before</strong> til at lave et overlay over billedet, der er gråt og gennemsigtigt. Det er dog også usynligt indtil man kører musen henover et billede.</p>
-            <p>Eksemplet bruger også <strong>::after</strong> til at lave et <em>circle plus</em> ovenpå billedet. Tegnet sættes i midten af billedet med <strong>position</strong>.</p>
-            <p>Bemærk: Propertien <strong>inset</strong> er <em>shorthand</em> og betyder <strong>top</strong>+<strong>left</strong>+<strong>bottom</strong>+<strong>right</strong> når man bruger <strong>position.</strong> Når alle værdierne sættes til 0 betyder det at elementet fylder det hele.</p>
+            <p>Eksemplet bruger også <strong>::after</strong> til at lave et <em>circle plus</em> oven på billedet. Tegnet sættes ind i et <strong>&lt;a&gt;</strong> element, så det er klikbart og kan åbne en ny fane med billedet i. Dette gøres med <strong>target=&quot;_black&quot;</strong> i anchor-tagget.</p>
+            <p>Vi vælger at bruge en grid-løsning til linket selvom man <em>kunne</em> bruge <strong>position</strong>. Det gør vi for at højne tilgængeligheden.</p>
           </div>
           <div>
             <p>Her er CSS koden:</p>
@@ -129,22 +139,42 @@
               &nbsp; pointer-events: none;<br />
               }<br />
               <br />
-              .gallery-item::after {<br />
-              &nbsp; content: "⊕";<br />
-              &nbsp; position: absolute;<br />
-              &nbsp; top: 50%;<br />
-              &nbsp; left: 50%;<br />
-              &nbsp; transform: translate(-50%, -50%);<br />
-              &nbsp; color: white;<br />
-              &nbsp; font-size: 3rem;<br />
-              &nbsp; opacity: 0;<br />
-              &nbsp; transition: opacity 250ms;<br />
-              &nbsp; pointer-events: none;<br />
+              .gallery-item {<br />
+              &nbsp; display: grid;<br />
+              &nbsp; aspect-ratio: 5 / 3;<br />
+              &nbsp; overflow: hidden;<br />
+              &nbsp; <br />
+              &nbsp; > * {<br />
+              &nbsp;&nbsp; grid-area: 1 / 1;<br />
               &nbsp; }<br />
               &nbsp; <br />
-              .gallery-item:hover::before,<br />
-              .gallery-item:hover::after {<br />
-              &nbsp; opacity: 1;<br />
+              &nbsp; img {<br />
+              &nbsp;&nbsp; width: 100%;<br />
+              &nbsp;&nbsp; height: 100%;<br />
+              &nbsp;&nbsp; min-height: 0;<br />
+              &nbsp;&nbsp; object-fit: cover;<br />
+              &nbsp; }<br />
+
+              &nbsp; .zoom {<br />
+              &nbsp;&nbsp; place-self: center;<br />
+              &nbsp;&nbsp; z-index: 1;<br />
+              &nbsp;&nbsp; text-decoration: none;<br />
+              &nbsp;&nbsp; cursor: zoom-in;<br />
+              &nbsp; <br />
+              &nbsp;&nbsp; &::after {<br />
+              &nbsp;&nbsp;&nbsp; content: "⊕";<br />
+              &nbsp;&nbsp;&nbsp; display: block;<br />
+              &nbsp;&nbsp;&nbsp; font-size: 3rem;<br />
+              &nbsp;&nbsp;&nbsp; color: white;<br />
+              &nbsp;&nbsp;&nbsp; opacity: 0;<br />
+              &nbsp;&nbsp;&nbsp; transition: opacity 250ms;<br />
+              &nbsp;&nbsp; }<br />
+              &nbsp; }<br />
+              &nbsp; <br />
+              &nbsp; &:hover .zoom::after,<br />
+              &nbsp; .zoom:focus-visible::after {<br />
+              &nbsp;&nbsp; opacity: 1;<br />
+              &nbsp; }<br />
               }
             </code>
           </div>
