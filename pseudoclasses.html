@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS pseudo classes</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/pseudoclasses.css" />
+    <link rel="icon" type="image/png" href="img/icon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/icon/favicon.svg" />
+    <link rel="shortcut icon" href="img/icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/icon/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back"><-- Back</a>
+      <h1>CSS pseudo classes</h1>
+    </header>
+    <main>
+      <div>
+        <h2>:is()</h2>
+        <section>
+          <article>
+            <div class="snippet">
+              <p>Denne CSS:</p>
+              <pre><code>main h1,
+main h2,
+main h3 {
+  color: darkgreen;
+}</code></pre>
+              <p>Kan forenkles til:</p>
+              <pre><code>main :is(h1, h2, h3) {
+  color: darkgreen;
+}</code></pre>
+            </div>
+            <div class="snippet">
+              <p>Ligeledes kan</p>
+              <pre><code>header h1, 
+header h2, 
+header h3, 
+main h1, 
+main h2, 
+main h3, 
+footer h1,
+footer h2,
+footer h3 {
+}</code></pre>
+              <p>Forenkles til</p>
+              <pre><code>:is(header, main, footer) :is(h1, h2, h3) {
+  margin-bottom: 1rem;
+}</code></pre>
+            </div>
+          </article>
+        </section>
+      </div>
+      <div>
+        <div>
+          <h2>:has()</h2>
+          <section>
+            <article>
+              <div>
+                <p>Med denne HTML</p>
+                <pre><code>&lt;article&gt;
+  &lt;h2&gt;Artikel med billede&lt;/h2&gt;
+  &lt;img src="photo.webp" alt="Landscape"&gt;
+&lt;/article&gt;
+
+&lt;article&gt;
+  &lt;h2&gt;Artikel uden billede&lt;/h2&gt;
+  &lt;p&gt;Kun tekst i denne artikel.&lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+                <p>Kan den første &lt;article&gt; vælges med denne CSS:</p>
+                <pre><code>article<strong>:has</strong>(img) {
+  background-color: lightblue;
+}
+</code></pre>
+              </div>
+            </article>
+          </section>
+        </div>
+        <div>
+          <h2>:not()</h2>
+          <section>
+            <article>
+              <!-- <div class="nested">
+            <code> </code>
+          </div> -->
+              <div class="unedited">
+                <p>Med denne HTML:</p>
+                <pre><code>&lt;button&gt;Gem&lt;/button&gt;
+&lt;button class="secondary"&gt;Annuller&lt;/button&gt;
+&lt;button&gt;Slet&lt;/button&gt;</code></pre>
+                <p>Kan den første og sidste &lt;button&gt; vælges samtidigt med at den midterste <em>fravælges</em> (pga. sin <em>class</em>) med følgende CSS:</p>
+                <pre><code>button<strong>:not</strong>(.secondary) {
+  background-color: darkblue;
+  color: white;
+}</code></pre>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Find projektet på GitHub: <a target="_blank" href="https://github.com/kemm-EK/lab2-e26">Repository</a></p>
+    </footer>
+  </body>
+</html>

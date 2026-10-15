@@ -1,0 +1,60 @@
+h2 {
+  margin-bottom: 0;
+  &:not(h2:first-of-type) {
+    margin-top: 1.5rem;
+  }
+}
+main {
+  width: 98vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  div:nth-of-type(2) > div:first-child {
+    border-bottom: 1px dashed #ddd;
+  }
+}
+section {
+  max-width: 100%;
+  p {
+    margin-bottom: 0;
+  }
+  code {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+}
+img {
+  width: 100%;
+}
+.moving-image {
+  transition: transform 0.4s ease;
+  &:hover {
+    transform: translate(30px, -40px);
+  }
+}
+
+.circle {
+  width: 75%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: rgb(62, 42, 15);
+  justify-self: center;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: #ebfc02;
+    filter: drop-shadow(0 0 35px #ffff01);
+  }
+}
+
+.rotating-image img {
+  transition: transform 1s ease;
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+.image-filters img {
+  transition: filter 1.2s ease;
+  &:hover {
+    filter: saturate(300%) brightness(140%) hue-rotate(20deg);
+  }
+}
