@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: abel;
+  src: url(../fonts/Abel-Regular.woff);
+}
+@font-face {
+  font-family: archivo;
+  src: url(../fonts/Archivo-Regular.woff);
+}
+@font-face {
+  font-family: nunito;
+  src: url(../fonts/Nunito-VariableFont_wght.ttf);
+}
+:root {
+  --block-color: #2f2d2d;
+  --text-color-light: #d9d7d7;
+  --code-bg-color: #6a6963;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header,
+footer {
+  background-color: var(--block-color);
+  padding: 1rem;
+  * {
+    color: var(--text-color-light);
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.back {
+  outline: 1px solid var(--text-color-light);
+  padding: 2px 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px var(--code-bg-color);
+  transform: translateY(-5px);
+  font-size: 0.9rem;
+  transition:
+    transform 100ms ease-out,
+    box-shadow 100ms ease-out;
+}
+.back:active {
+  transform: translate(2px, -3px);
+  box-shadow: 0 0 1px var(--code-bg-color);
+}
+main {
+  margin: 10px;
+}
+h1 {
+  font-family: archivo;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1em auto;
+  padding: 0.5em 0;
+  width: clamp(15ch, 50%, 600px);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+nav {
+  background-color: #333;
+  padding: 0.2em;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+nav a {
+  text-decoration: none;
+  color: #ddd;
+  font-family: abel;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #333;
+  height: max-content;
+  margin: 1rem 0 0 0;
+  margin-top: auto;
+  padding: 1em;
+  p {
+    color: #ccc;
+    font-family: nunito;
+    font-size: 0.8em;
+    font-weight: 200;
+  }
+  a {
+    color: #e1dede;
+  }
+  a:hover {
+    color: #f5f4f4;
+  }
+}

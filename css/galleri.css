@@ -1,0 +1,93 @@
+/* Indsæt flere custom properties her */
+:root {
+  --minsize: 200px;
+  --imgborder: 1px solid rgba(15, 55, 90, 0.4);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minsize), 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  grid-gap: 1em;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+/* .gallery-item {
+  height: calc(var(--minsize) * 0.6);
+  box-shadow: 2px 2px 3px rgba(86, 85, 85, 0.4);
+  border: var(--imgborder);
+  overflow: hidden;
+} */
+
+/* .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  filter: brightness(1) grayscale(0.5) blur(0.1px);
+  transition: all 0.7s;
+} */
+
+.gallery-item {
+  display: grid;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #ddd;
+  transition: box-shadow 0.4s;
+  > * {
+    grid-area: 1 / 1;
+  }
+  &:hover {
+    box-shadow: 2px 2px 2px #555;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    /* min-width: 0; */
+    object-fit: cover;
+    transition:
+      filter 0.8s,
+      scale 0.8s;
+  }
+  &:hover img,
+  &:has(.zoom:focus-visible) img {
+    opacity: 1;
+    filter: brightness(0.8) grayscale(70%);
+    scale: 1.04;
+  }
+
+  .zoom {
+    place-self: center;
+    z-index: 1;
+    text-decoration: none;
+    cursor: zoom-in;
+
+    &::after {
+      content: "⊕";
+      display: block;
+      font-size: 3rem;
+      color: white;
+      opacity: 0;
+      transition: opacity 250ms;
+    }
+  }
+
+  &:hover .zoom::after,
+  .zoom:focus-visible::after {
+    opacity: 1;
+  }
+}
+
+@media (width <= 550px) {
+  .gallery {
+    --minsize: 120px;
+    margin: 0 0.5rem;
+  }
+  .gallery-item {
+    aspect-ratio: 3/4;
+  }
+}
