@@ -1,0 +1,31 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+div {
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+div:not(div:first-child) {
+  background-color: antiquewhite;
+}
+div:not(.image-container) {
+  padding: 8px;
+}
+/* div:has(img) {
+  border: 2px dashed red;
+} */
+/* div:has(>img) {
+    border: 2px dashed red;
+} */
+div:has(img):not(div:has(> img)) {
+  border: 2px dashed red;
+}
